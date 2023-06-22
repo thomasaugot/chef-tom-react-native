@@ -1,12 +1,38 @@
-import { Button, StyleSheet, Text, View } from "react-native";
+import { StatusBar } from "react-native";
 import CategoriesScreen from "./screens/CategoriesScreen";
-import { StatusBar } from "expo-status-bar";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import MealsOverview from "./screens/MealsOverview";
 import MealDetailsScreen from "./screens/MealDetailsScreen";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import FavoritesScreen from "./screens/FavoritesScreen";
 
 const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
+
+const Drawernavigator = () => {
+  return (
+    <Drawer.Navigator
+      screenOptions={{
+        headerStyle: { backgroundColor: "#351401" },
+        headerTintColor: "white",
+        sceneContainerStyle: { backgroundColor: "#3f2f25" },
+        drawerContentStyle: { backgroundColor: "#351401" },
+        drawerInactiveTintColor: "white",
+        drawerActiveTintColor: "#351401",
+      }}
+    >
+      <Drawer.Screen
+        name="Categories"
+        component={CategoriesScreen}
+        options={{
+          title: "All Categories",
+        }}
+      />
+      <Drawer.Screen name="Favorites" component={FavoritesScreen} />
+    </Drawer.Navigator>
+  );
+};
 
 export default function App() {
   return (
@@ -21,18 +47,11 @@ export default function App() {
           }}
         >
           <Stack.Screen
-            options={{ title: "All Categories" }}
-            name="MealsCategories"
-            component={CategoriesScreen}
+            name="Drawer"
+            component={Drawernavigator}
+            options={{ headerShown: false }}
           />
-          <Stack.Screen
-            // options={({ route, navigation }) => {
-            //   const catId = route.params.categoryId;
-            //   return { title: catId };
-            // }}
-            name="MealsOverview"
-            component={MealsOverview}
-          />
+          <Stack.Screen name="MealsOverview" component={MealsOverview} />
           <Stack.Screen name="MealDetails" component={MealDetailsScreen} />
         </Stack.Navigator>
       </NavigationContainer>
@@ -40,6 +59,6 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {},
-});
+// const styles = StyleSheet.create({
+//   container: {},
+// });
