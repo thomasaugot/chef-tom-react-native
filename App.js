@@ -1,4 +1,11 @@
-import { Image, View, ScrollView, StatusBar, StyleSheet } from "react-native";
+import {
+  Image,
+  View,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  TouchableWithoutFeedback,
+} from "react-native";
 import CategoriesScreen from "./screens/CategoriesScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -6,23 +13,27 @@ import MealsOverview from "./screens/MealsOverview";
 import MealDetailsScreen from "./screens/MealDetailsScreen";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import FavoritesScreen from "./screens/FavoritesScreen";
-// import FavoritesContextProvider from "./store/context/favorites-context";
-import { Provider } from "react-redux";
-import { store } from "./store/redux/store";
+import FavoritesContextProvider from "./store/context/favorites-context";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
 const Drawernavigator = () => {
+  const DrawerContent = () => (
+    <View style={styles.container}>
+      <Image source={require("./assets/logo.png")} style={styles.logo} />
+    </View>
+  );
+
   return (
     <Drawer.Navigator
       screenOptions={{
-        headerStyle: { backgroundColor: "#c8d25f" },
-        headerTintColor: "#34322f",
+        headerStyle: { backgroundColor: "#DDAA00" },
+        headerTintColor: "white",
         sceneContainerStyle: { backgroundColor: "white" },
-        drawerContentStyle: { backgroundColor: "#c8d25f" },
-        drawerInactiveTintColor: "#34322f",
-        drawerActiveTintColor: "#34322f",
+        drawerContentStyle: { backgroundColor: "#DDAA00" },
+        drawerInactiveTintColor: "white",
+        drawerActiveTintColor: "white",
       }}
     >
       <Drawer.Screen
@@ -41,13 +52,12 @@ export default function App() {
   return (
     <>
       <StatusBar style="light" />
-      <Provider store={store}>
-        {/* <FavoritesContextProvider> */}
+      <FavoritesContextProvider>
         <NavigationContainer>
           <Stack.Navigator
             screenOptions={{
-              headerStyle: { backgroundColor: "#c8d25f" },
-              headerTintColor: "#34322f",
+              headerStyle: { backgroundColor: "#DDAA00" },
+              headerTintColor: "white",
               cardStyle: { backgroundColor: "white" },
             }}
           >
@@ -60,21 +70,7 @@ export default function App() {
             <Stack.Screen name="MealDetails" component={MealDetailsScreen} />
           </Stack.Navigator>
         </NavigationContainer>
-      </Provider>
-      {/* </FavoritesContextProvider> */}
+      </FavoritesContextProvider>
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  logo: {
-    width: 200,
-    height: 200,
-    marginBottom: 20,
-  },
-});

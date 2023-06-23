@@ -1,14 +1,11 @@
 import { View, Text, StyleSheet } from "react-native";
-import Meal from "../../models/meal";
 
 const MealDetails = ({ duration, complexity, affordability, style, textStyle }) => {
   return (
     <View style={[styles.details, style]}>
-      <Text style={[styles.detailItem, textStyle]}>{duration}</Text>
-      {complexity && <Text style={[styles.detailItem, textStyle]}>{complexity.toUpperCase()}</Text>}
-      {affordability && (
-        <Text style={[styles.detailItem, textStyle]}>{affordability.toUpperCase()}</Text>
-      )}
+      <Text style={[styles.detailItem, textStyle]}>Duration: {duration} min.</Text>
+      {complexity && <Text style={[styles.detailItem, textStyle]}>{complexity}</Text>}
+      {affordability && <Text style={[styles.detailItem, textStyle]}>$ {affordability}</Text>}
     </View>
   );
 };
@@ -25,6 +22,6 @@ const styles = StyleSheet.create({
   detailItem: {
     marginHorizontal: 6,
     fontSize: 12,
-    color: "#34322f",
+    color: "white",
   },
 });

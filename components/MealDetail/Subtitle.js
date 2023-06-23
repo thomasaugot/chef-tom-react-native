@@ -12,7 +12,7 @@ export default Subtitle;
 
 const styles = StyleSheet.create({
   subTitle: {
-    color: "#34322f",
+    color: "black",
     fontSize: 18,
     fontWeight: "bold",
 

@@ -31,7 +31,7 @@ const MealDetailsScreen = ({ route, navigation }) => {
         return (
           <IconButton
             icon={mealIsFavorite ? "star" : "star-outline"}
-            color="#34322f"
+            color="white"
             onPress={changeFavoriteStatusHandler}
             style={styles.favIcon}
           />
@@ -86,12 +86,16 @@ const styles = StyleSheet.create({
     color: "#34322f",
   },
   detailstext: {
-    color: "white",
+    color: "black",
   },
   listOuterContainer: {
     alignItems: "center",
   },
   listContainer: {
     width: "80%",
+  },
+  favIcon: {
+    color: "white",
+    marginRight: 100,
   },
 });
