@@ -31,7 +31,7 @@ const MealDetailsScreen = ({ route, navigation }) => {
         return (
           <IconButton
             icon={mealIsFavorite ? "star" : "star-outline"}
-            color="white"
+            color="#34322f"
             onPress={changeFavoriteStatusHandler}
             style={styles.favIcon}
           />
@@ -81,9 +81,9 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: "bold",
     fontSize: 24,
-    margin: 8,
+    marginTop: 18,
     textAlign: "center",
-    color: "white",
+    color: "#34322f",
   },
   detailstext: {
     color: "white",

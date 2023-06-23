@@ -23,7 +23,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   detailItem: {
-    marginHorizontal: 4,
+    marginHorizontal: 6,
     fontSize: 12,
+    color: "#34322f",
   },
 });

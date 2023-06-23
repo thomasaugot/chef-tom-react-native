@@ -1,6 +1,6 @@
-import { Pressable, View, Text, StyleSheet, Platform } from "react-native";
+import { Pressable, View, Text, StyleSheet, Platform, Image } from "react-native";
 
-const CategoryGridTile = ({ title, color, onPress }) => {
+const CategoryGridTile = ({ title, onPress, image }) => {
   return (
     <View style={styles.gridItem}>
       <Pressable
@@ -8,13 +8,15 @@ const CategoryGridTile = ({ title, color, onPress }) => {
         onPress={onPress}
         style={({ pressed }) => [styles.button, pressed ? styles.buttonPressed : null]}
       >
-        <View style={[styles.innerContainer, { backgroundColor: color }]}>
+        <View style={styles.titleContainer}>
+          <Image source={{ uri: image }} style={styles.image} />
           <Text style={styles.title}>{title}</Text>
         </View>
       </Pressable>
     </View>
   );
 };
+
 export default CategoryGridTile;
 
 const styles = StyleSheet.create({
@@ -25,7 +27,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     elevation: 4,
     backgroundColor: "white", // for IOS
-    shadowColor: "black", // for IOS
+    shadowColor: "#34322f", // for IOS
     shadowOpacity: 0.25, // for IOS
     shadowOffset: {
       // for IOS
@@ -43,13 +45,26 @@ const styles = StyleSheet.create({
   },
   innerContainer: {
     flex: 1,
-    padding: 16,
-    justifyContent: "center",
-    alignItems: "center",
     borderRadius: 8,
+    overflow: "hidden",
+  },
+  image: {
+    width: "100%",
+    height: 120,
+  },
+  titleContainer: {
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: "#c8d25f",
+    paddingVertical: 10,
   },
   title: {
     fontWeight: "bold",
     fontSize: 18,
+    color: "#34322f",
+    textAlign: "center",
+    paddingTop: 6,
   },
 });

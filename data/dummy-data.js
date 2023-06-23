@@ -2,16 +2,56 @@ import Category from "../models/category";
 import Meal from "../models/meal";
 
 export const CATEGORIES = [
-  new Category("c1", "Italian", "#f5428d"),
-  new Category("c2", "Quick & Easy", "#f54242"),
-  new Category("c3", "Hamburgers", "#f5a442"),
-  new Category("c4", "German", "#f5d142"),
-  new Category("c5", "Light & Lovely", "#368dff"),
-  new Category("c6", "Exotic", "#41d95d"),
-  new Category("c7", "Breakfast", "#9eecff"),
-  new Category("c8", "Asian", "#b9ffb0"),
-  new Category("c9", "French", "#ffc7ff"),
-  new Category("c10", "Summer", "#47fced"),
+  new Category(
+    "c1",
+    "Italian",
+    "https://www.foodrepublic.com/img/gallery/100-italian-fooddrink-words-and-phrases/l-intro-1684783348.jpg"
+  ),
+  new Category(
+    "c2",
+    "Quick & Easy",
+    "https://img.buzzfeed.com/buzzfeed-static/static/2020-06/11/14/asset/dcb5220da65d/sub-buzz-86-1591886919-8.jpg"
+  ),
+  new Category(
+    "c3",
+    "Hamburgers",
+    "https://media.cnn.com/api/v1/images/stellar/prod/220428140436-04-classic-american-hamburgers.jpg?c=3x2"
+  ),
+  new Category(
+    "c4",
+    "German",
+    "https://www.firebirdtours.com/sites/default/files/images/schintzel-min.jpg"
+  ),
+  new Category(
+    "c5",
+    "Light & Lovely",
+    "https://www.stylecraze.com/wp-content/uploads/2015/06/5-Quinoa-Salad-to-Burn-Fat.jpg"
+  ),
+  new Category(
+    "c6",
+    "Exotic",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLG8zh7nrWfVPUmGtiUHVWBVttXU7eVY_JP-JdKAbedVb6Y3wjvQaqnhOw0TQAC9eA7us&usqp=CAU"
+  ),
+  new Category(
+    "c7",
+    "Breakfast",
+    "https://images.immediate.co.uk/production/volatile/sites/30/2017/08/smoothie-bowl-3a8632c.jpg?quality=90&resize=556,505"
+  ),
+  new Category(
+    "c8",
+    "Asian",
+    "https://img.theculturetrip.com/450x/smart/wp-content/uploads/2015/10/shutterstock_406519027.jpg"
+  ),
+  new Category(
+    "c9",
+    "French",
+    "https://images.squarespace-cdn.com/content/v1/5e484ab628c78d6f7e602d73/1aa2a676-6d5f-4f0a-915b-cf56c0f93daa/pain-au-chocolate.jpeg"
+  ),
+  new Category(
+    "c10",
+    "Summer",
+    "https://www.eatthis.com/wp-content/uploads/sites/4/2020/08/watermelon-pieces.jpg?quality=82&strip=1"
+  ),
 ];
 
 export const MEALS = [

@@ -14,7 +14,7 @@ const CategoriesScreen = ({ navigation }) => {
       <CategoryGridTile
         onPress={pressHandler}
         title={itemData.item.title}
-        color={itemData.item.color}
+        image={itemData.item.image}
       />
     );
   };
